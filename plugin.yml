@@ -1,10 +1,17 @@
 main: us.fihgu.easyinventory.Loader
 name: EasyInventory
-version: 1.0.3
+version: 1.0.4
 author: fihgu
 description: helps people to manage their inventory
+commands:
+ view:
+  description: shows the given player's inventory.
+  usage: /view [playerName]
+  permission: us.fihgu.easyinventory.view
 permissions:
  us.fihgu.easyinventory.sort:
   default: true
  us.fihgu.easyinventory.refill:
   default: true
+ us.fihgu.easyinventory.view:
+  default: op

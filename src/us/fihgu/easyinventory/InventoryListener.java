@@ -28,6 +28,7 @@ public class InventoryListener implements Listener
 	{
 		allowedNames.add("container.chest");
 		allowedNames.add("container.chestDouble");
+		allowedNames.add("container.inventory");
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -41,14 +42,22 @@ public class InventoryListener implements Listener
 			{
 				ClickType click = event.getClick();
 
-				if (click == ClickType.MIDDLE)
+				if (click == ClickType.MIDDLE && event.getClickedInventory() != null)
 				{
 					InventoryType type = event.getClickedInventory().getType();
 					
 					boolean allow = false;
 					if(type == InventoryType.PLAYER)
 					{
-						allow = true;
+						String title = event.getClickedInventory().getTitle();
+						for(String temp : allowedNames)
+						{
+							if(temp.equals(title))
+							{
+								allow = true;
+								break;
+							}
+						}
 					}
 					
 					if(type == InventoryType.CHEST)
@@ -256,9 +265,10 @@ public class InventoryListener implements Listener
 		{
 			ItemStack[] newContent = new ItemStack[inv.getStorageContents().length];
 			inv.setStorageContents(newContent);
-			for (ItemStack item : product)
+			for (int i = 0; i < product.size(); i++)
 			{
-				inv.addItem(item);
+				ItemStack item = product.get(i);
+				inv.setItem(i, item);
 			}
 		}
 	}

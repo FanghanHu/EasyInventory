@@ -3,6 +3,7 @@ name: EasyInventory
 version: 1.0.6
 author: fihgu
 description: helps people to manage their inventory
+depend: [Toolbox]
 commands:
  view:
   description: shows the given player's inventory.

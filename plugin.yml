@@ -1,6 +1,6 @@
 main: us.fihgu.easyinventory.Loader
 name: EasyInventory
-version: 1.0.5
+version: 1.0.6
 author: fihgu
 description: helps people to manage their inventory
 commands:
@@ -15,3 +15,5 @@ permissions:
   default: true
  us.fihgu.easyinventory.view:
   default: op
+ us.fihgu.easyinventory.show:
+  default: true

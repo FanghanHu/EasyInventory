@@ -13,6 +13,8 @@ public class Loader extends JavaPlugin
 	{
 		Loader.instance = this;
 		Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
+		Bukkit.getPluginManager().registerEvents(new ChatListener(), this);
+		
 		System.out.print("fihgu's EasyInventory is Enabled.");
 		
 		this.getCommand("view").setExecutor(new View());

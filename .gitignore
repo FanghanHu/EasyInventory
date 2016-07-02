@@ -3,3 +3,4 @@
 .git/*
 .classpath
 .project
+/bin/

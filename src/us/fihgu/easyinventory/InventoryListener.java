@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -91,6 +92,7 @@ public class InventoryListener implements Listener
 						@Override
 						public void run()
 						{
+							player.getWorld().playSound(player.getLocation(), Sound.UI_BUTTON_CLICK, 1, 1);
 							sortInventory(inv);
 						}
 					};

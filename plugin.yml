@@ -1,9 +1,8 @@
 main: us.fihgu.easyinventory.Loader
 name: EasyInventory
-version: 1.0.7
+version: 1.0.9
 author: fihgu
 description: helps people to manage their inventory
-depend: [Toolbox]
 commands:
  view:
   description: shows the given player's inventory.
@@ -16,5 +15,3 @@ permissions:
   default: true
  us.fihgu.easyinventory.view:
   default: op
- us.fihgu.easyinventory.show:
-  default: true

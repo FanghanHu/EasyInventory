@@ -23,7 +23,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class InventoryListener implements Listener
 {
-	private final static LinkedList<String> allowedNames = new LinkedList<>();
+	private final static LinkedList<String> allowedNames = new LinkedList<String>();
 	
 	static
 	{
@@ -38,7 +38,7 @@ public class InventoryListener implements Listener
 		
 		if (!event.isCancelled())
 		{			
-			HumanEntity player = event.getWhoClicked();
+			final HumanEntity player = event.getWhoClicked();
 			if(player.hasPermission("us.fihgu.easyinventory.sort"))
 			{
 				ClickType click = event.getClick();
@@ -85,7 +85,7 @@ public class InventoryListener implements Listener
 						return;
 					}
 					
-					Inventory inv = event.getClickedInventory();
+					final Inventory inv = event.getClickedInventory();
 
 					BukkitRunnable task = new BukkitRunnable()
 					{
@@ -122,13 +122,13 @@ public class InventoryListener implements Listener
 
 	private void handleEvent(PlayerEvent event)
 	{
-		Player player = event.getPlayer();
+		final Player player = event.getPlayer();
 		if (!player.hasPermission("us.fihgu.easyinventory.refill"))
 		{
 			return;
 		}
-		ItemStack old_main = player.getInventory().getItemInMainHand().clone();
-		ItemStack old_off = player.getInventory().getItemInOffHand().clone();
+		final ItemStack old_main = player.getInventory().getItemInMainHand().clone();
+		final ItemStack old_off = player.getInventory().getItemInOffHand().clone();
 
 		if (this.hasItem(old_main) || this.hasItem(old_off))
 		{
@@ -233,7 +233,7 @@ public class InventoryListener implements Listener
 			}
 		}
 
-		ArrayList<ItemCluster> sortByType = new ArrayList<>();
+		ArrayList<ItemCluster> sortByType = new ArrayList<ItemCluster>();
 
 		outer: for (ItemCluster cluster : sortBySimilarity)
 		{
@@ -254,7 +254,7 @@ public class InventoryListener implements Listener
 			sortByType.add(cluster);
 		}
 
-		LinkedList<ItemStack> product = new LinkedList<>();
+		LinkedList<ItemStack> product = new LinkedList<ItemStack>();
 		for (ItemCluster cluster : sortByType)
 		{
 			product.addAll(cluster.list);

@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
  */
 public class ItemCluster
 {
-	public LinkedList<ItemStack> list = new LinkedList<>();
+	public LinkedList<ItemStack> list = new LinkedList<ItemStack>();
 	
 	/**
 	 * the first item 

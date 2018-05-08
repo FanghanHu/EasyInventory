@@ -1,6 +1,6 @@
 main: us.fihgu.easyinventory.Loader
 name: EasyInventory
-version: 1.0.9
+version: 1.1.0
 author: fihgu
 description: helps people to manage their inventory
 commands:
